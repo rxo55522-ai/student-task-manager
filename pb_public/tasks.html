@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks | Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pocketbase/0.21.1/pocketbase.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body class="tasks-page">
+    <div class="container tasks-container">
+        <header class="header">
+            <div>
+                <h1>My Tasks</h1>
+                <p style="margin-bottom: 0;">Manage your daily goals.</p>
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="user-display-name">Loading...</span>
+                <button id="logout-btn" class="btn-secondary">Log Out</button>
+            </div>
+        </header>
+
+        <div class="card">
+            <div id="task-list" class="task-list" style="text-align: left;">
+                <p style="text-align: center; color: var(--text-muted);">Loading tasks...</p>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <button id="add-task-btn" class="btn-primary" style="width: auto; padding: 0.5rem 1.5rem;">
+                    + Add Task
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="task-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <h2 id="modal-title">Add Task</h2>
+            <form id="task-form">
+                <input type="hidden" id="task-id">
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="t-title" required placeholder="e.g. Math Homework">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Type</label>
+                        <select id="t-type">
+                            <option value="Assignment">Assignment</option>
+                            <option value="Project">Project</option>
+                            <option value="Exam">Exam</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>Priority</label>
+                        <select id="t-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Due Date</label>
+                    <input type="date" id="t-date">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="t-desc" rows="3" placeholder="Details..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="close-modal">Cancel</button>
+                    <button type="submit" class="btn-primary" id="save-task">Save</button>
+                </div>
+
+                <div id="edit-actions"
+                    style="display: none; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

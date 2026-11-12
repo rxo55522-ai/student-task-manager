@@ -1,0 +1,8 @@
+# PocketBase runtime data (users, tasks, logs) — never commit
+pb_data/
+# PocketBase binary — download it from the official releases instead
+pocketbase
+pocketbase.exe
+*.zip
+.DS_Store
+Thumbs.db

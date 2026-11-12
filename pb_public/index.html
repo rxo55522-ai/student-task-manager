@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pocketbase/0.21.1/pocketbase.umd.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="login-card" class="card">
+            <h1>Welcome Back</h1>
+            <p>Please enter your details to sign in.</p>
+
+            <div id="login-alert" class="alert"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="student@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+
+            <div class="auth-switch">
+                Don't have an account? <a id="show-register">Sign up</a>
+            </div>
+        </div>
+
+        <div id="register-card" class="card" style="display: none;">
+            <h1>Create Account</h1>
+            <p>Start organizing your tasks today.</p>
+
+            <div id="register-alert" class="alert"></div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" placeholder="student@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-passwordConfirm">Confirm Password</label>
+                    <input type="password" id="reg-passwordConfirm" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+
+            <div class="auth-switch">
+                Already have an account? <a id="show-login">Sign in</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
